@@ -16,9 +16,9 @@ library(palmerpenguins)
 
 This R mark down document will include the worked solution to all exercises required by STAT545B's assignment B1. The solutions will be presented in order of appearance in the assignment document.
 
-## Exercise 1: Make a Function
+## Make a Function with Documentation
 
-For the purpose of this exercise, we will create a function that, once given a data-frame and a selection of columns, returns a summary that details the number of unique values in the aforementioned columns. 
+For the purpose of this exercise, we will create a function that, once given a data-frame and a selection of columns, returns a summary that details the number of unique values in the aforementioned columns. Some of the descriptions for individual inputs can be rather length, please do scroll the box below side-ways to review it. 
 
 ```{r}
 #' @title Count Unique Observations
@@ -72,7 +72,11 @@ count_unique_observations(esoph)
 
 ### Example 2: Mtcars dataset
 
-In this example, the function will directly produce a summary of the number of unique values in the "cyl" and "gear" columns of the built-in mtcars data set, treating any instances of NA as a unique value, should they occur.
+In this example, the function will directly produce a summary of the number of unique values in the "cyl" and "gear" columns of the built-in mtcars data set, treating any instances of NA as a unique value, should they occur. The cars in questions have either 4, 6, or 8 cylinder engines, and they also have 3, 4, or 5 gears.
+
+As a result, we expect 3 unique values for cylinder and 3 for gear.
+
+There are no NAs for these columns
 
 ```{r}
 count_unique_observations(mtcars, c("cyl", "gear"))
@@ -82,6 +86,10 @@ count_unique_observations(mtcars, c("cyl", "gear"))
 
 In this example, the function will directly produce a summary of the number of unique values in the "island", "sex", and "species" columns of the penguins data set from the palmerpenguins package, treating any instances of NA as a unique value, should they occur.
 
+In this dataset, data has been collected from 3 different islands for 3 different species. There are no NAs for these two columns.
+
+The sex of a penguin may be either male or female. There are also some observations with missing value for sex, so we also have 3 unique values for this column.
+
 ```{r}
 count_unique_observations(penguins, c("island", "species", "sex"))
 ```
@@ -89,6 +97,8 @@ count_unique_observations(penguins, c("island", "species", "sex"))
 ### Example 4: Penguins dataset
 
 This example is identical to the example above, except that NAs are no longer counted as a unique value.
+
+In this case, we expect only 2 unique values for sex, that being male and female.
 
 ```{r}
 count_unique_observations(penguins, c("island", "species", "sex"), ignore_na = TRUE)
