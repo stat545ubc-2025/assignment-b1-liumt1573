@@ -80,7 +80,7 @@ count_unique_observations <- function(df, col_names = everything(), ignore_na = 
   return(as.data.frame(ans))
   }
   
-  #If ignore_na is either TRUE nor FALSE, throw a custom error
+  #If ignore_na is neither TRUE nor FALSE, throw a custom error
   stop("ignore_na has to be a boolean value (TRUE/FALSE)")
 }
 ```
@@ -330,7 +330,7 @@ test_that("Can handle numerical columns, no NAs", {
 })
 ```
 
-    ## Test passed 🎊
+    ## Test passed 😀
 
 ``` r
 test_that("Ignore_NA works correctly pt 1", {
@@ -346,7 +346,7 @@ test_that("Ignore_NA works correctly pt 2", {
 })
 ```
 
-    ## Test passed 🎉
+    ## Test passed 🎊
 
 ``` r
 test_that("Can handle columns with strings", {
@@ -354,6 +354,6 @@ test_that("Can handle columns with strings", {
 })
 ```
 
-    ## Test passed 🌈
+    ## Test passed 🥇
 
 Fortunately, the function managed to pass all of the required tests!

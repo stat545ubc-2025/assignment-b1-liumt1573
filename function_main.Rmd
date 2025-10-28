@@ -51,7 +51,7 @@ count_unique_observations <- function(df, col_names = everything(), ignore_na = 
   return(as.data.frame(ans))
   }
   
-  #If ignore_na is either TRUE nor FALSE, throw a custom error
+  #If ignore_na is neither TRUE nor FALSE, throw a custom error
   stop("ignore_na has to be a boolean value (TRUE/FALSE)")
 }
 
