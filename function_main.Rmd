@@ -5,12 +5,11 @@ date: "2025-10-28"
 output: github_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup}
+#Loading the required packages
 library(testthat)
 library(dplyr)
 library(palmerpenguins)
-library(testthat)
 ```
 
 ## Preamble
